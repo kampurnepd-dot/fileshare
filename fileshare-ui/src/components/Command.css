@@ -1,0 +1,80 @@
+.command-box {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+.command-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  max-height: 150px;
+  resize: vertical;
+  padding: 13px 15px;
+  border: 1px solid #303b53;
+  border-radius: 10px;
+  outline: none;
+  background: #0e1422;
+  color: #e5e7eb;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.command-input::placeholder {
+  color: #818da3;
+}
+
+.command-input:focus {
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.14);
+}
+
+.command-send {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #4f8cff;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.command-send:hover {
+  background: #3978ef;
+  transform: translateY(-1px);
+}
+
+.command-send:active {
+  transform: translateY(0);
+}
+
+.command-send:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+.command-send:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 480px) {
+  .command-box {
+    gap: 8px;
+  }
+
+  .command-input {
+    padding: 11px;
+  }
+
+  .command-send {
+    padding: 12px 15px;
+  }
+}

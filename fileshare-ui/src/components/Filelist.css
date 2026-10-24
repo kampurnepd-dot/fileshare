@@ -1,0 +1,179 @@
+/* FileList.css */
+
+.file-list {
+  width: 100%;
+  color: #e5e7eb;
+}
+
+.file-list .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.file-list .head h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #e5e7eb;
+}
+
+.file-list .ghost {
+  padding: 9px 14px;
+  border: 1px solid #29344d;
+  border-radius: 9px;
+  background: transparent;
+  color: #d1d5db;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.file-list .ghost:hover {
+  background: #202a3d;
+  border-color: #4f8cff;
+}
+
+.file-search {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.file-list .search-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  max-height: 150px;
+  box-sizing: border-box;
+  resize: vertical;
+  padding: 13px 15px;
+  border: 1px solid #303b53;
+  border-radius: 10px;
+  outline: none;
+  background: #0e1422;
+  color: #e5e7eb;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.file-list .search-input::placeholder {
+  color: #818da3;
+}
+
+.file-list .search-input:focus {
+  border-color: #4f8cff;
+  box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.14);
+}
+
+.file-list .search-button {
+  flex-shrink: 0;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: #4f8cff;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.file-list .search-button:hover:not(:disabled) {
+  background: #3978ef;
+  transform: translateY(-1px);
+}
+
+.file-list .search-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.file-list .empty {
+  padding: 20px 12px;
+  color: #929db2;
+  text-align: center;
+  font-size: 14px;
+}
+
+.file-list .file-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-list .row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px 0;
+  border-top: 1px solid #29344d;
+}
+
+.file-list .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(79, 140, 255, 0.12);
+  color: #60a5fa;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.file-list .name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.file-list .row .danger {
+  padding: 10px 14px;
+  border: 1px solid #ef4444;
+  border-radius: 9px;
+  background: transparent;
+  color: #f87171;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.file-list .row .danger:hover {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.file-list button:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .file-list .row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .file-list .name {
+    flex-basis: calc(100% - 52px);
+  }
+
+  .file-list .row button {
+    margin-top: 4px;
+  }
+
+  .file-list .file-search {
+    align-items: stretch;
+  }
+}
